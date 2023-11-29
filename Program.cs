@@ -31,7 +31,7 @@
 Напишите программу, которая определяет количество 
 чётных чисел в массиве.
 */
- Console.Clear();
+/* Console.Clear();
 
 int[] FillArray(int size) 
  {
@@ -54,3 +54,39 @@ if(arr[i] % 2 == 0 )
 }
 }
 Console.WriteLine($"В массиве {count} целых чисел");
+*/
+
+/* Задача 3: Задайте массив из вещественных чисел с
+ненулевой дробной частью. Найдите разницу между
+максимальным и минимальным элементов массива.
+*/
+Console.Clear();
+double[] FillArray(int size) 
+ {
+    double[] array = new double [size];
+    for(int i =0; i < array.Length; i++)
+    {
+        array[i] = new Random().NextDouble()*100;
+    }
+    return array; 
+}
+int lengthArray = 10;
+double[] arr = FillArray(lengthArray);
+Console.WriteLine(string.Join(" ", arr));
+double min = arr[0];
+double max = arr[0];
+for(int i =1; i < arr.Length; i++)
+{
+    if(arr[i] < min)
+    {
+    min = arr[i];
+    }
+    else
+    {
+    if (arr[i] > max)
+    {
+        max = arr[i];
+    } 
+    }
+}
+Console.WriteLine($" Разница между {min} и {max} = {max - min}");
